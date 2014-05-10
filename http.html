@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="weatherApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script>
+        var weatherApp = angular.module('weatherApp', []);
+        weatherApp.controller('WeatherCtrl', function($scope){
+            $scope.message = 'Hello World!';
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller="WeatherCtrl">
+        {{message}}
+    </div>
+
+</body>
+</html>

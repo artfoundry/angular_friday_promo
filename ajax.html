@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var url = 'http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139';
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4){
+                if(xhr.status === 200) {
+                    var obj = JSON.parse(xhr.responseText);
+                    document.body.firstElementChild.innerHTML = obj.weather[0].description;
+                }
+            }
+        };
+        xhr.send();
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en" ng-app="myApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Angular JS</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="controllers.js"></script>
+    <script>
+        var myApp = angular.module('myApp', []);
+        myApp.controller('MyControl', function($scope){
+            $scope.message = '';
+            $scope.printMessage = function(){
+                console.log($scope.message);
+            };
+            $scope.data = [1,2,3,45,6,7,8,9];
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller="MyControl">
+        <input type="text" ng-model="message"/>
+        <button ng-click="printMessage()">Display Message</button>
+        <ul>
+            <li ng-repeat="num in data">
+                {{num}}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
